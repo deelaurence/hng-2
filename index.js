@@ -1,7 +1,10 @@
 const express = require('express')
 const cors =require ('cors')
 const app = express()
-app.use(cors({origin:"*"}))
+app.use(cors({
+    origin:"*",
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}))
 app.use(express.json())
 const port = process.env.PORT||4000
 app.listen(port,()=>{
